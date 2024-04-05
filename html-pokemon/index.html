@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Página do Pokémon Squirtle</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header id="header">
@@ -27,12 +27,10 @@
         <h2 id="info-squirtle-label">Informações sobre Squirtle</h2>
         <div>
           <img
-          class="img-zoom"
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
             alt="Squirtle 1"
           />
           <img
-          class="img-zoom"
             src="https://archives.bulbagarden.net/media/upload/thumb/7/79/Squirtle_SSBU.png/200px-Squirtle_SSBU.png"
             alt="Squirtle 2"
           />
@@ -96,7 +94,6 @@
         <ul>
           <li>
             <a
-              class="opacity-transition"
               href="https://www.pokemon.com/br/pokedex/squirtle"
               target="_blank"
               >Pokédex - Squirtle</a
@@ -104,7 +101,6 @@
           </li>
           <li>
             <a
-              class="opacity-transition"
               href="https://bulbapedia.bulbagarden.net/wiki/Squirtle_(Pok%C3%A9mon)"
               target="_blank"
               >Bulbapedia - Squirtle</a
@@ -117,33 +113,39 @@
         <h2 id="evolucao-label">Evoluções</h2>
         <ul>
           <li>
-            <figure>
-              <img
-                src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"
-                alt="Squirtle"
-              />
-              <figcaption class="figcaption">1. Squirtle</figcaption>
-            </figure>
+            <a href="pokemon.html?pokemon=squirtle">
+              <figure>
+                <img
+                  src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"
+                  alt="Squirtle"
+                />
+                <figcaption>1. Squirtle</figcaption>
+              </figure>
+            </a>
           </li>
 
           <li>
-            <figure>
-              <img
-                src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png"
-                alt="Wartortle"
-              />
-              <figcaption class="figcaption">2. Wartortle</figcaption>
-            </figure>
+            <a href="pokemon.html?pokemon=wartortle">
+              <figure>
+                <img
+                  src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png"
+                  alt="Wartortle"
+                />
+                <figcaption>2. Wartortle</figcaption>
+              </figure>
+            </a>
           </li>
 
           <li>
-            <figure>
-              <img
-                src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"
-                alt="Blastoise"
-              />
-              <figcaption class="figcaption">3. Blastoise</figcaption>
-            </figure>
+            <a href="pokemon.html?pokemon=blastoise">
+              <figure>
+                <img
+                  src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"
+                  alt="Blastoise"
+                />
+                <figcaption>3. Blastoise</figcaption>
+              </figure>
+            </a>
           </li>
         </ul>
       </section>
