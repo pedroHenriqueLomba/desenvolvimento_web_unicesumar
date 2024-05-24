@@ -118,6 +118,10 @@ li p {
   padding-bottom: 5px;
 }
 
+.z-index-1 {
+  z-index: 1;
+}
+
 .overlay {
   position: fixed;
   top: 0;

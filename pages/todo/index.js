@@ -39,6 +39,7 @@ function openEditTaskDialog(taskId) {
   overlay.classList.add("overlay");
   document.body.appendChild(overlay);
   const editDialog = document.createElement("dialog");
+  editDialog.classList.add("z-index-1");
   editDialog.open = true;
   editDialog.id = "editDialog";
   const titleLabel = document.createElement("label");
@@ -79,11 +80,13 @@ function openEditTaskDialog(taskId) {
       title: updatedTitle,
       description: updatedDescription,
     });
+    overlay.remove();
     editDialog.remove();
   });
   const cancelButton = document.createElement("button");
   cancelButton.textContent = "Cancelar";
   cancelButton.addEventListener("click", () => {
+    overlay.remove();
     editDialog.remove();
   });
   actionsDiv.classList.add("d-flex", "justify-content-end", "gap-3", "py-1");
@@ -96,10 +99,6 @@ function openEditTaskDialog(taskId) {
     actionsDiv
   );
   overlay.appendChild(editDialog);
-  overlay.addEventListener("click", () => {
-    overlay.remove();
-    editDialog.remove();
-  });
 }
 
 // Carregar tarefas do localStorage ao recarregar a página
