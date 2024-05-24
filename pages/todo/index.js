@@ -32,10 +32,12 @@ function addTask(event) {
 }
 
 function openEditTaskDialog(taskId) {
-  console.log(taskId);
   const task = JSON.parse(localStorage.getItem(taskKey)).find(
     (task) => task.id === taskId
   );
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  document.body.appendChild(overlay);
   const editDialog = document.createElement("dialog");
   editDialog.open = true;
   editDialog.id = "editDialog";
@@ -93,8 +95,11 @@ function openEditTaskDialog(taskId) {
     descriptionInput,
     actionsDiv
   );
-  console.log(editDialog);
-  document.body.appendChild(editDialog);
+  overlay.appendChild(editDialog);
+  overlay.addEventListener("click", () => {
+    overlay.remove();
+    editDialog.remove();
+  });
 }
 
 // Carregar tarefas do localStorage ao recarregar a página
