@@ -58,7 +58,7 @@ function openEditTaskDialog(taskId) {
   const saveButton = document.createElement("button");
   saveButton.textContent = "Salvar";
   saveButton.addEventListener("click", (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     const updatedTitle = titleInput.value;
     const updatedDescription = descriptionInput.value;
     const updatedTasks = JSON.parse(localStorage.getItem(taskKey)).map(
@@ -101,6 +101,14 @@ function openEditTaskDialog(taskId) {
   overlay.appendChild(editDialog);
 }
 
+function deleteTask(taskId) {
+  const tasks = JSON.parse(localStorage.getItem(taskKey)).filter(
+    (task) => task.id !== taskId
+  );
+  localStorage.setItem(taskKey, JSON.stringify(tasks));
+  document.getElementById(taskId).remove();
+}
+
 // Carregar tarefas do localStorage ao recarregar a página
 window.addEventListener("DOMContentLoaded", () => {
   const tasks = JSON.parse(localStorage.getItem(taskKey)) || [];
@@ -115,7 +123,10 @@ function generateHtmlCard(task) {
     <div class="card">
       <div class="d-flex justify-content-between">
         <h2>${task.title}</h2>
-        <button class="edit-button" title="Editar tarefa" onClick="openEditTaskDialog(${task.id})">✏️</button>
+        <div>
+          <button class="edit-button" title="Editar tarefa" onClick="openEditTaskDialog(${task.id})">✏️</button>
+          <button class="delete-button" title="Excluir tarefa" onClick="deleteTask(${task.id})">❌</button>
+        </div>
       </div>
       <p>${task.description}</p>
     </div>
